@@ -261,7 +261,7 @@ string tree::lookup( unsigned add) {
 
 string tree::lookup1(range ip_add){
 	int i;
-	int len = 32 - length(ip_add.low, ip_add.high);
+	int len =  length(ip_add.low, ip_add.high);
 	string prefix;
 
 	if(len == 32){
