@@ -165,8 +165,8 @@ int main(int argc, char *argv[]){
 
 //construct the whole ruleset into table(only store unique value)
 	for(i = 0; i != numrules; i++){
-		string key = srctree.lookup(ruleset[i].field[0].low);
-		key = key + ' ' + dsttree.lookup(ruleset[i].field[1].low);
+		string key = srctree.lookup1(ruleset[i].field[0]);
+		key = key + ' ' + dsttree.lookup1(ruleset[i].field[1]);
 //		cout<<key<<endl;  //test use
 		table.insert(make_pair(key,1));
 	}
@@ -184,8 +184,8 @@ int main(int argc, char *argv[]){
     	k = dsttree.level(ruleset[i].field[1]);
 
     	cout<<"rule number: "<<i<<" level: "<<j<<" "<<k<<endl;
-    	field1[j].insert(srctree.lookup(ruleset[i].field[0].low));
-    	field2[k].insert(dsttree.lookup(ruleset[i].field[1].low));
+    	field1[j].insert(srctree.lookup1(ruleset[i].field[0]));
+    	field2[k].insert(dsttree.lookup1(ruleset[i].field[1]));
 
     }
 
